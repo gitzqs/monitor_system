@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zqs.dao.station.IStationMapper">
+	<resultMap id="stationMap" type="station" >
+		
+		<id column="ID" property="id" jdbcType="DECIMAL"/>
+		<result column="STATION_NAME" property="stationName" jdbcType="VARCHAR"/>
+		<result column="STATION_ADDR_ID" property="stationAddrId" jdbcType="DECIMAL"/>
+		<result column="STATION_CONTACT_ID" property="stationContactId" jdbcType="DECIMAL"/>
+		<result column="STATION_REPORT_ID" property="stationReportId" jdbcType="DECIMAL"/>
+		
+		<result column="SYSTEM_POWER" property="systemPower" jdbcType="DECIMAL"/>
+		<result column="ACCESS_TIME" property="accessTime" jdbcType="TIMESTAMP"/>
+		<result column="STATION_STYLE" property="stationStyle" jdbcType="DECIMAL"/>
+		<result column="STATION_TRACK" property="stationTrack" jdbcType="DECIMAL"/>
+		<result column="PER_PRICE" property="perPrice" jdbcType="DECIMAL"/>
+		
+		<result column="CURRENCY_TYPE" property="currencyType" jdbcType="DECIMAL"/>
+		<result column="IS_PUBLIC" property="isPublic" jdbcType="DECIMAL"/>
+		<result column="STATION_IMG" property="stationImg" jdbcType="VARCHAR"/>
+		<result column="DESCRIPTION" property="description" jdbcType="VARCHAR"/>
+		
+		
+	</resultMap>
+	
+</mapper>
