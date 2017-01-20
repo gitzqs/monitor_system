@@ -35,7 +35,13 @@
 			<typeAlias type="com.zqs.model.station.Station" alias="station"/>
 			<typeAlias type="com.zqs.model.station.StationContact" alias="stationContact"/>
 			<typeAlias type="com.zqs.model.station.StationReport" alias="stationReport"/>
-			
+		
+		<!-- sys -->
+			<typeAlias type="com.zqs.model.sys.SysPermission" alias="sysPermission"/>
+			<typeAlias type="com.zqs.model.sys.SysRole" alias="sysRole"/>
+			<typeAlias type="com.zqs.model.sys.SysUserRole" alias="sysUserRole"/>
+			<typeAlias type="com.zqs.model.sys.SysRolePermission" alias="sysRolePermission"/>
+		
 		<!-- other -->
 			<typeAlias type="com.zqs.model.other.GlobalCity" alias="globalCity"/>
 	</typeAliases>

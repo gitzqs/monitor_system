@@ -36,6 +36,39 @@ CREATE TABLE tb_time_zone(
 	PRIMARY KEY(id)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+
+--
+-- Table structure for table sys_permission
+-- 菜单表
+--
+DROP TABLE IF EXISTS sys_permission;
+CREATE TABLE sys_permission(
+	id bigint(19) NOT NULL AUTO_INCREMENT,
+	name varchar(255) DEFAULT NULL COMMENT '菜单名称',
+	parent_permission_id  bigint(19) DEFAULT NULL COMMENT '父id',
+	type varchar(20) DEFAULT NULL COMMENT '类别',
+	url varchar(255) DEFAULT NULL COMMENT '地址',
+	level int(1) DEFAULT NULL COMMENT '级别',
+	is_child int(1) DEFAULT NULL COMENT '是否有子节点',
+	sort int(10) DEFAULT NULL COMMENT '排序',
+	status int(10) DEFAULT NULL COMMENT '状态',
+	PRIMARY KEY(id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table sys_role
+-- 角色表
+--
+DROP TABLE IF EXISTS sys_role;
+CREATE TABLE sys_role(
+	id bigint(19) NOT NULL AUTO_INCREMENT,
+	name varchar(255) DEFAULT NULL COMMENT '角色名称',
+	status int(1) DEFAULT NULL COMMENT '状态',
+	description varchar(255) DEFAULT NULL COMMENT '描述',
+	PRIMARY KEY(id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 --
 -- Table structure for table tb_user
 -- 用户基础表
@@ -55,6 +88,33 @@ CREATE TABLE tb_user(
 	UNIQUE KEY uni_tb_user_email (email) USING BTREE
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+
+--
+-- Table structure for table sys_user_role
+-- 用户-角色表
+--
+DROP TABLE IF EXISTS sys_user_role;
+CREATE TABLE sys_user_role(
+	id bigint(19) NOT NULL AUTO_INCREMENT,
+	user_id bigint(19) DEFAULT NULL,
+	role_id bigint(19) DEFAULT NULL,
+	status int(1) DEFAULT NULL,
+	PRIMARY KEY(id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+
+
+--
+-- Table structure for table sys_role_permission
+-- 角色-菜单表
+--
+DROP TABLE IF EXISTS sys_role_permission;
+CREATE TABLE sys_role_permission(
+	id bigint(19) NOT NULL AUTO_INCREMENT,
+	role_id bigint(19) DEFAULT NULL,
+	permission_id bigint(19) DEFAULT NULL,
+	status int(1) DEFAULT NULL,
+	PRIMARY KEY(id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
 
 --
 -- Table structure for tb_station
